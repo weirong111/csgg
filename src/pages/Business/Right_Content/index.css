@@ -4,10 +4,12 @@
   display: flex;
   flex-direction: column;
 }
-.title_h3 {
+.right_title_2 {
+  font-size: 1.042vw;
   font-weight: 1000;
-}
-.right_title {
+  position: relative;
+  top: 20.208vw;
+  left: 0.208vw;
   width: 800px;
   height: 100px;
   display: flex;
@@ -16,7 +18,6 @@
 }
 .business_right_content {
   width: 800px;
-  height: 600px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -27,16 +28,17 @@
 }
 .Business_content {
   width: 320px;
-  height: 220px;
+  margin-bottom: -1.437vw;
+  margin-top: 4.563vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 .business_img {
-  width: 300px;
-  height: 170px;
+  width: 350px;
   border-radius: 3px;
+  padding: 10px;
 }
 
 @media screen and (max-width: 450px) {

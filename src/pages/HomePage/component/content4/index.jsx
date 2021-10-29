@@ -2,7 +2,7 @@ import React, { lazy, useEffect, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./index.css";
 import axios from "axios";
-let logo = lazy(() => import("./img/blue_bar.png"));
+import logo from "./img/blue_bar.png";
 function Home(props) {
   const [news, setNews] = useState([]);
 
@@ -29,13 +29,12 @@ function Home(props) {
       {/* 总盒子 */}
       <div className="companyProfile">
         <div className="mid_part_top">
-          <img alt="" src={logo}></img>
+          <img alt="" src={logo} style={{ height: 50 }}></img>
           <p className="mid_part_top_text1">公司简介</p>
           <p className="mid_part_top_text2">Company profile</p>
         </div>
         <div className="com_pro_text">
           <p>
-            {" "}
             重庆长实钢结构有限公司位于重庆市万州区沱口集装箱码头办公大楼三楼，注册资金1000万元。是一家专业从事钢结构设计、制作、施工安装于一体的高新技术企业，在万州经开区建有占地40余亩的生产基地，有包括火焰切割机、组立机、埋弧焊机、抛丸机等组成的重钢生产线和轻型钢生产线。公司与鸿路钢构等大型钢构集团建立了良好的合作伙伴关系。公司拥有多套建构钢结构设计软件，胜任各种轻钢和重钢结构的设计、制作与安装任务，具有建筑总承包叁级资质和建筑装修修饰工程专业承包贰级资质。
           </p>
           <p>
@@ -82,9 +81,11 @@ function Home(props) {
             {news.map((item, index) => {
               if (index < 5) {
                 return (
-                  <li onClick={() => props.history.push("/Trends")}>
-                    {" "}
-                    {item.title}{" "}
+                  <li
+                    className="ulli"
+                    onClick={() => props.history.push("/Trends")}
+                  >
+                    {item.title}
                   </li>
                 );
               }

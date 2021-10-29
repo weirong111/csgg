@@ -5,21 +5,23 @@
 .title_h3 {
   font-weight: 1000;
 }
-
+.eng_pag {
+  margin: -10px !important;
+}
 .eng_right_title {
   width: 900px;
   display: flex;
   position: absolute;
-  top: 42.208vw;
-  left: 39.833vw;
+  top: 30.208vw;
+  left: 34.833vw;
   flex-direction: column;
   justify-content: center;
 }
 .right_content {
   position: absolute;
-  top: 34.208vw;
-  left: 41.208vw;
-  font-size: 22px;
+  top: 35.208vw;
+  left: 38vw;
+  font-size: 18px;
   cursor: pointer;
 }
 

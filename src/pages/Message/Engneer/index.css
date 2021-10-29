@@ -9,7 +9,6 @@
 }
 
 .me_title {
-  width: 479.47px;
   font-family: PingFang SC;
   font-style: normal;
   font-weight: 500;
@@ -48,31 +47,31 @@
   margin: 0px;
 }
 @media screen and (max-width: 450px) {
-  .me_passage{
+  .me_passage {
     position: relative;
     left: -20px;
-}
-.me_title{
+  }
+  .me_title {
     width: 400px;
     font-size: 22px;
     font-weight: 500;
     position: relative;
     left: 30px;
-}
-.me_writer{
+  }
+  .me_writer {
     width: 300px;
     font-size: 14px;
     position: relative;
     left: 30px;
     margin-top: 40px;
-}
-.me_content{
+  }
+  .me_content {
     margin-top: 40px;
     width: 300px;
     position: relative;
     left: 80px;
     font-size: 22px;
     font-family: PingFang SC;
-     font-weight: 1000;   
-}
+    font-weight: 1000;
+  }
 }

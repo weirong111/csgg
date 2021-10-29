@@ -8,7 +8,7 @@ function LinkExchange(props) {
     const [data,setData]=useState([]);
     //调用接口数据
     useEffect(()=>{
-         axios.get('http://8.142.10.159:8001/changshi/link/findAllLink').then(res=>{
+         axios.get('http:/123.60.224.233:8001/changshi/link/findAllLink').then(res=>{
             
              setData(res.data.data.items)
          }).catch(rea=>{

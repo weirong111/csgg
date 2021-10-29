@@ -28,7 +28,7 @@ const { TextArea } = Input;
         }).catch(err=>{
             console.log(err);
         })
-        axios.get(`http://8.142.10.159:8001/changshi/news/findNewsById/${"9066296d0d174cffb20b6778c8e15da1"}`).then(res=>{
+        axios.get(`http://123.60.224.233:8001/changshi/news/findNewsById/${"9066296d0d174cffb20b6778c8e15da1"}`).then(res=>{
             console.log(res);
         })
     }

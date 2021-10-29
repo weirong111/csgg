@@ -8,11 +8,11 @@ import { withRouter } from "react-router";
 class Right_Content extends Component {
   state = {
     contents: [],
-    length:[]
+    length: [],
   };
   // 初次网络请求
   componentDidMount() {
-    axios.get(`http://8.142.10.159:8001/changshi/project/pageQuery/1/6`).then(
+    axios.get(`http://123.60.224.233:8001/changshi/project/pageQuery/1/9`).then(
       (res) => {
         this.setState({ contents: res.data.data.row });
       },
@@ -20,16 +20,17 @@ class Right_Content extends Component {
         console.log(err);
       }
     );
-    axios.get("http://8.142.10.159:8001/changshi/project/findParentProjects").then(res=>{
-      
-       this.setState({ length: res.data.data.parentProjects.length });
-    })
+    axios
+      .get("http://8.142.10.159:8001/changshi/project/findParentProjects")
+      .then((res) => {
+        this.setState({ length: res.data.data.parentProjects.length });
+      });
   }
 
   // 网络请求图片和内容
   pageChange = (event) => {
     axios
-      .get(`http://8.142.10.159:8001/changshi/project/pageQuery/${event}/6`)
+      .get(`http://123.60.224.233:8001/changshi/project/pageQuery/{event}/9`)
       .then(
         (res) => {
           this.setState({ contents: res.data.data.row });
@@ -53,7 +54,7 @@ class Right_Content extends Component {
             className="eng_pag"
             defaultCurrent={1}
             total={this.state.length}
-            defaultPageSize={6}
+            defaultPageSize={9}
             onChange={this.pageChange}
           />
         </div>

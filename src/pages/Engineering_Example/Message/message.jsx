@@ -8,10 +8,10 @@ class Message extends React.Component {
   render() {
     return (
       <div id="m_shell">
-        <div className="right_title">
+        {/* <div className="right_title">
           <h2 className="title_h3">工程实例</h2>
           <hr />
-        </div>
+        </div> */}
         <div className="right_cont">
           <h2 className="m_title"> {this.props.location.state.title}</h2>
           <div className="photo">

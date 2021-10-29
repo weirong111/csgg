@@ -10,21 +10,24 @@ export default class Right_Content extends Component {
 
   state = {
     contents: [],
-    length:[]
+    length: [],
   };
 
   // 初次网络请求
 
   componentDidMount() {
     const result = this.props.location.state;
-    axios.get("http://8.142.10.159:8001/changshi/news/findAllNews").then(res=>{
-      this.setState({ length: res.data.data.items.length });
-    })
+    axios
+      .get("http://123.60.224.233:8001/changshi/news/findAllNews")
+      .then((res) => {
+        console.log(res);
+        this.setState({ length: res.data.data.items.length });
+      });
     if (result !== undefined) {
       this.setState({ contents: result });
       return;
     } else {
-      axios.get(`http://8.142.10.159:8001/changshi/news/pageNews/1/8`).then(
+      axios.get(`http://123.60.224.233:8001/changshi/news/pageNews/1/8`).then(
         (res) => {
           this.setState({ contents: res.data.data.row });
         },
@@ -32,29 +35,26 @@ export default class Right_Content extends Component {
           console.log(err);
         }
       );
-    
     }
   }
 
   // 网络请求图片和内容
   pageChange = (page) => {
-    axios.get(`http://8.142.10.159:8001/changshi/news/pageNews/${page}/8`).then(
-      (res) => {
-        this.setState({ contents: res.data.data.row });
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    axios
+      .get(`http://123.60.224.233:8001/changshi/news/pageNews/${page}/8`)
+      .then(
+        (res) => {
+          this.setState({ contents: res.data.data.row });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   };
   render() {
     return (
       <div id="content_shell">
-        <div className="trend_right_title">
-          <h2 className="trend_title_h3">公司动态</h2>
-          <hr />
-        </div>
-        <div className="right_content">
+        <div className="right_content-trend">
           {/* 接到数据后传入状态，props传给展示区 */}
           <Display_content display_items={this.state.contents} />
           <Pagination

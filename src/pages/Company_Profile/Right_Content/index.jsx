@@ -4,8 +4,8 @@ export default class Right_Content extends Component {
   render() {
     return (
       <div id="profile_shell">
-        <div className="right_title">
-          <h2 className="title_h3">公司简介</h2>
+        <div className="right_title1">
+          <h2 className="title_h31">公司简介</h2>
           <hr />
         </div>
         {/* title */}

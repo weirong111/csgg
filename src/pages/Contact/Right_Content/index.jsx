@@ -8,7 +8,7 @@ export default class Right_Content extends Component {
 
   componentDidMount() {
     axios
-      .get("http://8.142.10.159:8001/changshi/contact/findContact")
+      .get("http://123.60.224.233:8001/changshi/contact/findContact")
       .then((res) => {
         console.log(res.data.data.items);
         const result = res.data.data.items;

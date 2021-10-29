@@ -8,7 +8,7 @@ import axios from 'axios';
      //更改信息的方法
    const  handleSubmit =(values)  => {
       
-        axios.post("http://8.142.10.159:8001/changshi/link/createLink",
+        axios.post("http://123.60.224.233:8001/changshi/link/createLink",
         {name:values.name
           ,address:values.address}).then(
             res=>{

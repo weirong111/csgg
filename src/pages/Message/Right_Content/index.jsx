@@ -10,22 +10,24 @@ export default class Right_Content extends Component {
 
   state = {
     contents: [],
-    length:[]
+    length: [],
   };
 
   // 初次网络请求
 
   componentDidMount() {
-    axios.get("http://8.142.10.159:8001/changshi/notification/findAllNotification").then(res=>{
-      
-      this.setState({ length: res.data.data.items.length });
-   })
     axios
-      .get(`http://8.142.10.159:8001/changshi/notification/pageNotification/1/8`)
+      .get("http://123.60.224.233:8001/changshi/notification/findAllNoti")
+      .then((res) => {
+        console.log(res);
+        this.setState({ length: res.data.data.items.length });
+      });
+    axios
+      .get(`http://123.60.224.233:8001/changshi/notification/pageNoti/1/8`)
       .then(
         (res) => {
+          console.log(res);
           this.setState({ contents: res.data.data.row });
-         
         },
         (err) => {
           console.log(err);
@@ -36,26 +38,26 @@ export default class Right_Content extends Component {
   // 网络请求图片和内容
   pageChange = (event) => {
     axios
-      .get(`http://8.142.10.159:8001/changshi/notification/pageNotification/${event}/8`)
+      .get(
+        `http://123.60.224.233:8001/changshi/notification/pageNotification/${event}/8`
+      )
       .then(
         (res) => {
-      
           this.setState({ contents: res.data.data.row });
-        
         },
         (err) => {
           console.log(err);
         }
       );
-   
   };
   render() {
     return (
       <div id="content_shell">
-        <div className="mes_title">
-          <h2 className="mes_h3">公司公告</h2>
+        <div className="message-title">
+          <div>通知公告</div>
           <hr />
         </div>
+
         <div className="right_content">
           {/* 接到数据后传入状态，props传给展示区 */}
           <Display_content display_items={this.state.contents} />
@@ -65,7 +67,7 @@ export default class Right_Content extends Component {
             pageSizeOptions={8}
             onChange={this.pageChange}
             total={this.state.length}
-            className='mes_pag'
+            className="mes_pag"
           />
         </div>
       </div>
